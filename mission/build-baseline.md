@@ -16,13 +16,12 @@ lives in the packet, not here.
 | Architecture | `mission/architecture.md` | current for packet 8f5244db (byte-identical to the packet copy) |
 | Work packages | `mission/packages/WP-1..WP-5` | current; WP-1 runs first, alone |
 | Frozen acceptance gate | `tests/frozen/` (AC-1, AC-4–AC-18) | locked, hash `fdcd0ced`; matches `.foundry/frozen.lock` and `mission/frozen.ref` |
-| Freeze commit | — | **pending**: not committed yet (Paul to authorize) |
+| Freeze commit | `c5fc9011aa3cddd56780561343c2bf3161d2d0b6` | committed 2026-10-26 on Paul's instruction; `tests/frozen/` matches `fdcd0ced` at this commit |
 | Implementation | — | none; the root app is still the archetype's Notes scaffold |
 
 ## Build readiness
 
-**Not ready** until the freeze commit above is recorded. Then the builder runs WP-1..WP-5 against this
-gate. `tests/frozen/` is read-only for the builder. The root `scripts/verify.ts` registry is still the
+**Ready for the builder.** The builder runs WP-1..WP-5 against this gate, starting with WP-1 alone. `tests/frozen/` is read-only for the builder. The root `scripts/verify.ts` registry is still the
 archetype's Letlytics list; WP-5 replaces it with AC-1 and AC-4–AC-18.
 
 Open, not blocking the build: Q2 (Paul's Level 1 content check in Logic 12.4) blocks the experiment start.
